@@ -19,3 +19,10 @@ jobs:
 
       - name: Test
         run: go test -v ./...
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v4.1.1
+        with:
+          context: .
+          push: true
+          tags: krstehello:latest
